@@ -2,7 +2,7 @@ import csv
 import math
 import operator
 import random
-
+import os
 
 
 
@@ -66,7 +66,8 @@ def get_value(neighbors):
 
 
 def main():
-	filepath='/home/tetrix/Documents/k-nearest neighbor/data/iris_data.csv'
+	current_dir = os.path.dirname(os.path.abspath(__file__))
+	filepath = os.path.join(current_dir, 'data', 'iris_data.csv')
 	train_set, test_set =  separate_data(filepath, 0.7)
 	hit = 0
 	miss = 0
